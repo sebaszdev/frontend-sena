@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 const card = document.querySelector(".main-card");
+const btn = document.getElementById('btn-restart');
 
 form.addEventListener('submit', (ev) => {
   ev.preventDefault(); // prevent reload page
@@ -32,3 +33,11 @@ form.addEventListener('submit', (ev) => {
     
   `;
 });
+
+if (btn) {
+  btn.addEventListener('click', (ev) => {
+    ev.preventDefault();
+  
+    card.innerHTML = '';
+  });
+}
