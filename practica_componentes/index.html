@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="styles/style.css" rel="stylesheet" />
+
+    <script src="components/form.js" defer></script>
+
+    <title>Form</title>
+  </head>
+
+  <body>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cards.html">Cards creator</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Info cards creator</h1>
+      <p>Create cards with the image you want</p>
+      
+      <section id="workshop">
+        <div>
+          <h2>Try it!</h2>
+          <div class="form-container">
+            <p>Click the create button to see the cards</p>
+
+            <form>
+              <label>
+                Card name
+                <input class="text-input" name="card-name" value="Pikachu" readonly />
+              </label>
+
+              <label>
+                Image link
+                <input class="text-input"
+                  name="img"
+                  value="https://cdn.pixabay.com/photo/2016/10/27/12/16/pikachu-1774508_1280.jpg"
+                  readonly
+                />
+              </label>
+
+              
+              <label>
+                Description
+                <input class="text-input" name="description" value="Asi se verian las cartas normalmente" readonly />
+              </label>
+
+              <button class="btn-primary" type="submit" >
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="main-card">
+          <p>Click the button to see me</p>
+        </div>
+      </section>
+
+      <h2>Go to cards creator to create your own cards</h2>
+    </main>
+  </body>
+</html>

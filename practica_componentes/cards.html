@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles/style.css" rel="stylesheet" />
+
+    <script src="components/form.js" defer></script>
+    <script src="components/buttons.js" defer></script>
+
+    <title>Cards creator</title>
+  </head>
+  <body>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cards.html">Cards creator</a></li>
+      </ul>
+    </nav> 
+
+    <main>
+      <h2>Create your own cards</h2>
+
+      <section id="workshop">
+        <div class="form-container">
+          <p>Put the name of the card, a correct link to an image and a description if you want one.</p>
+          <form>
+            <label>
+              Card name
+              <input class="text-input" name="card-name" />
+            </label>
+
+            <label>
+              Image link
+              <input class="text-input" name="img" />
+            </label>
+
+            <label>
+              Description
+              <input class="text-input" name="description" />
+            </label>
+
+            <button class="btn-primary" id="btn-home" type="submit" >
+              Create
+            </button>
+          </form>
+        </div>
+
+        <div id="card-panel">
+          <div class="main-card">
+          </div>
+          <button class="btn-secondary" id="btn-restart">
+            Restart
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
