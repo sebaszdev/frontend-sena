@@ -24,8 +24,11 @@ form.addEventListener('submit', (ev) => {
     <div class="img-container">
       <img src="${img}" />
     </div>
-    <div class="description-container">
-      ${desc ? `<p>${desc}</p>` : ''}
-    </div>
+    
+    ${desc ? `
+      <div class="description-container">
+        <p>${desc}</p>
+      </div>` : ''}
+    
   `;
 });
