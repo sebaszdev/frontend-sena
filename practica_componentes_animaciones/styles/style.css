@@ -1,0 +1,105 @@
+* {
+  font-family: 'JetBrainsMono Nerd Font', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1e1e2e;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  color: #cdd6f4;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
+
+#btn-change {
+  width: 10rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  font-size: larger;
+  color: #cdd6f4;
+  background-color: #313244;
+  margin: 0 auto;
+  transition:
+    background-color 0.5s ease-in,
+    color 0.5s;
+}
+
+#btn-change:hover {
+  cursor: pointer;
+  background-color: #89b4fa;
+  color: #1e1e2e;
+  transform: scale(1.03);
+}
+
+#btn-change:active {
+  transform: translateY(0.1rem);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.card {
+  width: 20rem;
+  height: 25rem;
+  background-color: #313244;
+  border-radius: 0.5rem;
+  border-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  position: relative;
+  height: 3rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
