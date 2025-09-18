@@ -75,6 +75,35 @@ function renderCarrito() {
     <hr />
     <button id="comprar-btn" class="btn-primario">Comprar todo</button>
   `;
+
+  const comprarBtn = document.getElementById('comprar-btn');
+  if (comprarBtn) {
+    comprarBtn.addEventListener("click", () => {
+      const user = getCurrentUser();
+      if (!user) return alert("Debes iniciar sesión para comprar.");
+
+      const username = user.username;
+      const userInventory = getUserInventory(username);
+
+      if (userInventory.carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+
+      // Filtrar duplicados por si ya tenía películas compradas
+      const nuevasPeliculas = userInventory.carrito.filter(
+        id => !userInventory.propias.includes(id)
+      );
+
+      userInventory.propias.push(...nuevasPeliculas);
+      userInventory.carrito = []; // Vaciar carrito
+
+      saveUserInventory(username, userInventory);
+
+      alert("¡Compra realizada con éxito!");
+      window.location.href = "inventory.html"; // o como se llame tu página
+    });
+  }
 }
 
 renderCarrito();
@@ -90,43 +119,15 @@ function saveUserInventory(username, userInventory) {
   saveInventory(inventory);
 }
 
-const comprarBtn = document.getElementById('comprar-btn');
-if (comprarBtn) {
-  document.getElementById("comprar-btn").addEventListener("click", () => {
-    const user = getCurrentUser();
-    if (!user) return alert("Debes iniciar sesión para comprar.");
 
-    const username = user.username;
-    const userInventory = getUserInventory(username);
-
-    if (userInventory.carrito.length === 0) {
-      alert("Tu carrito está vacío.");
-      return;
-    }
-
-    // Filtrar duplicados por si ya tenía películas compradas
-    const nuevasPeliculas = userInventory.carrito.filter(
-      id => !userInventory.propias.includes(id)
-    );
-
-    userInventory.propias.push(...nuevasPeliculas);
-    userInventory.carrito = []; // Vaciar carrito
-
-    saveUserInventory(username, userInventory);
-
-    alert("¡Compra realizada con éxito!");
-    window.location.href = "inventory.html"; // o como se llame tu página
-  });
-}
 
 function removeMovie(movieId) {
   const user = getCurrentUser();
   if (!user) return alert("Debes iniciar sesion");
   const userInv = getUserInventory(user.username);
   // eliminar la pelicula del carrito
-  carritoNuevo = userInv.carrito.filter(el => {
-    return el != movieId;
-  });
+  carritoNuevo = userInv.carrito.filter(el => el != movieId);
   userInv.carrito = carritoNuevo;
   saveUserInventory(user.username, userInv);
 }
+
