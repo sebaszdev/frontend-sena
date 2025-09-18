@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiCine Web - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <nav>
+        <a asp-controller="Home" asp-action="Index" id="home-button">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.com%2FnCv8sCQi3s4AAAAC%2Famong-us.gif&f=1&nofb=1&ipt=df8162c6a61a5e111bdfb961265da670c2d38075dcacebb76822e3f10289c482" alt="">
+          <p>MiCine Web</p>
+        </a>
+        <ul class="nav-medio-container">
+          <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
+          <li><a asp-controller="Home" asp-action="Catalog">Catálogo</a></li>
+        </ul>
+        <ul class="nav-final-container">
+       </ul>
+      </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>🎬 MiCine Web</h2>
+          <p>Explora y compra desde un solo lugar.</p>
+          <p>Hecho por sebas.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navegación</h3>
+          <ul>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; no se que poner aca</p>
+      </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

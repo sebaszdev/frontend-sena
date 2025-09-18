@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<h1>Registro</h1>
+<div class="registro-login-container">
+<form id="register-form" action="">
+    <label>
+    Nombre de usuario
+    <input name="username" type="text" placeholder="Ingresa tu nombre de usuario" required/>
+    </label>
+    <label>
+    Correo
+    <input name="email" type="email" placeholder="Ingresa tu correo electrónico" required/>
+    </label>
+    <label>
+    Contraseña
+    <input name="password" type="password" placeholder="Ingresa una contraseña" minlength=8 required />
+    </label>
+
+    <button id="btn-register" class="btn-primario">Registrarse</button>
+    <p>¿Tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+</form>
+</div>
+
+@section Scripts {
+    <script src="~/js/session.js" asp-append-version="true"></script>
+}

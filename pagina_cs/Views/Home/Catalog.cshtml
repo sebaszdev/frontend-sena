@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Catalogo";
+}
+
+<h1>Catálogo</h1>
+<section class="catalogo">
+    <h2>Explora una gran colección de peliculas</h2>
+    <div class="catalogo-container">
+    </div>
+</section>
+
+<div id="popup-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header" id="popup-header">
+        </div>
+        <div class="modal-body">
+          <h2 id="popup-title"></h2>
+          <p id="popup-description"></p>
+          <button id="popup-agregar-btn" class="btn-primario">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+
+@section Scripts {
+    <script src="~/js/catalog.js" asp-append-version="true"></script>
+}
